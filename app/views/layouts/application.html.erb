@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<%= link_to "Permanet Records", root_url, id: "logo" %>
+			<nav>
+				<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to "Log in", '#' %></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<%= yield %>
 </body>
 </html>
