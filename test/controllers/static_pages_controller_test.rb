@@ -13,4 +13,5 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "Permanent Records | About"
   end
 
+  
 end
