@@ -72,3 +72,9 @@ input, textarea, select, .uneditable-input {
 input{
 	height: auto !important;
 }
+
+/* jumbotron */
+	.jumbotron h1 {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
