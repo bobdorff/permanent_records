@@ -91,7 +91,12 @@ input{
 }
 
 /* jumbotron */
-	.jumbotron h1 {
+	.jumbotron {
+		background: #000 asset-data-url("jumbotron_image.jpg");
+		background-size: cover;
+		color: grey;
+		h1 {
 		font-weight: bold;
 		text-transform: uppercase;
 	}
+}
