@@ -53,22 +53,21 @@ h1, h2, h3, h4, h5, h6 {
 /* footer */
 
 footer {
+	height: 17px;
   margin-top: 45px;
-  padding-top: 5px;
+  padding-top: 2px;
   padding-left: 5px;
   padding-right: 5px;
   background-color: grey;
-  small {
+  footer-logo {
   	float: left;
   }
-  ul {
-  	list-style: none;
+  a {
   	float: right;
-  	a {
-  		color: #373737;
-  		&:hover {
-  			color: black;
-  		}
+  	margin-top: -16px;
+  	color: #373737;
+  	&:hover {
+  		color: black;
   	}
   }
 }
