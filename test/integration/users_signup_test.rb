@@ -12,7 +12,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_template 'users/new'
   end
 
-  test 'valid signup does save' do 
+  test 'valid signup does save and logs the user in' do 
     assert_difference 'User.count', 1 do
       post_via_redirect users_path, user: {  username: "ciablo",
                               email: "valid@good.com",
@@ -20,6 +20,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                               password_confirmation: 'password'}
     end
   assert_template 'users/show'
+  assert is_logged_in?
   assert_select '.alert-success'
   end
 end
