@@ -7,7 +7,8 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
 
   test "users index displays a list of all users" do 
     log_in_as(@user)
+    get users_path
     assert_template 'users/index'
-    assert_select 'a[href=?]', @user.username
+    assert_select 'a[href=?]', user_path(@user) 
   end 
 end
