@@ -6,6 +6,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "unsuccessful edit attempt" do 
+    log_in_as(@user)
+    assert is_logged_in?
     get edit_user_path(@user)
     assert_template 'users/edit'
     patch user_path(@user), user: { username: "", 
@@ -17,6 +19,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "successful edit attempt" do 
+    log_in_as(@user)
+    assert is_logged_in?
     get edit_user_path(@user)
     assert_template "users/edit"
     patch user_path(@user), user: { username: 'davey',
