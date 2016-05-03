@@ -1,8 +1,8 @@
 <%#<%= form_tag({controller: "records", action: "new"}, method: "get") do <]%>
-<%= form_tag do %>
+<%= form_tag(new_record_path, id: "album-search") do %>
   <%= label_tag(:album_title, "Album title") %>
   <%= text_field_tag(:album_title) %>
-  <%= label_tag(:artist_name, "Album title") %>
+  <%= label_tag(:artist_name, "Artist name") %>
   <%= text_field_tag(:artist_name) %>
   <%= submit_tag("Search for this record", id: "submit-search", class: "btn", data: { remote: true, toggle:"modal", target:"#myModal"}) %>
 <% end %>
