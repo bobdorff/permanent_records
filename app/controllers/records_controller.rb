@@ -1,17 +1,15 @@
 class RecordsController < ApplicationController
   def new
-    if params[:artist_name].empty? && params[:album_title].empty?
-      flash.now[:danger] = "Please submit an album title, artist name or both."
-      @results = ["Nothing matched your search."]
-      render layout: false
-    else
+    # if params[:artist_name].empty? && params[:album_title].empty?
+    #   @results = {"Please enter the name of a band, the title of a record, or both."}
+    #   render layout: false
+    # else
       wrapper = generate_wrapper 
-      query = search_formatter(params)
-      "*************"
-      p query
-      @results = wrapper.search(query)
+      query = query_creator(params)
+      request_type = 
+      @results = wrapper.search( query, :format => :vinyl).results
       render layout: false      
-    end
+    # end
   end
 
 

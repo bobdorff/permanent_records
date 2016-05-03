@@ -7,21 +7,18 @@ module RecordsHelper
     wrapper
   end
 
-  def search_formatter(params)
-    query = {}
+  def query_creator(params)
     if !params[:artist_name].empty? && !params[:album_title].empty?
-      query[:title] = "#{params[:artist_name]} - #{params[:album_title]}"
-      query[:format] = "vinyl"
+      query = "#{params[:artist_name]} - #{params[:album_title]}"
     elsif !params[:artist_name].empty? && params[:album_title].empty?
-      query[:format] = "vinyl"
-      query[:artist] = "#{params[:artist_name]}"
-    elsif params[:artist_name].empty? && params[:album_title].empty?
-      query[:format] = "vinyl"
-      query[:artist] = "#{params[:artist_name]}"
+      query = params[:artist_name].to_s
+    else
+      query = params[:album_name].to_s  
     end
-    query.each 
-
+    query
   end
+
+
 end
 
 
