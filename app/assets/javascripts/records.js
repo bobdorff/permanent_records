@@ -4,7 +4,7 @@ $( document ).ready(function() {
     var params = $(this).serialize();
         console.log(params);
     var request = $.ajax(
-            {   url: "/records/new",
+            {   url: "/records",
                 method: "GET",  
                 data: params
             });

@@ -1,0 +1,13 @@
+<ul>
+	<% @results.each do |result| %>
+	<br>
+  	<li>
+  		<%= image_tag(result.thumb) %>
+      <h3><%= result.title %> (<%= result.year %>)</h3>
+  		<%= result.label %> 
+      <%= result.format %>
+      <%= result.barcode.first %>
+  	</li>
+ 	<br>
+	<%end%>
+</ul>
