@@ -8,3 +8,19 @@ kendrick:
   email: kendrick@example.com
   password_digest: <%= User.digest('password') %>
 
+jay: 
+  username: blueprint
+  email: jay@z.com
+  password_digest: <%= User.digest('password') %>
+
+nas:
+  username: ill
+  email: stillmatic@gmail.com
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  username: <%="User #{n}"%>
+  email:  <%="user-#{n}@example.com"%>
+  password_digest: <%= User.digest('password') %>
+<% end %> 
