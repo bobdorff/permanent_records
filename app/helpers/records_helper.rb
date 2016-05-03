@@ -1,9 +1,7 @@
 module RecordsHelper
 
   def generate_wrapper
-    wrapper = Discogs::Wrapper.new("Search OAuth", user_token: 'QDUeFOZNwIwOePlxpVziEHzamhbIHUdfENAJTnLR')
-    p ")))))))))))))))))))))))))"
-    p wrapper
+    wrapper = Discogs::Wrapper.new("Search OAuth", user_token: ENV['DISCOGS_TOKEN'])
     wrapper
   end
 
