@@ -4,7 +4,7 @@
   <%= text_field_tag(:album_title) %>
   <%= label_tag(:artist_name, "Album title") %>
   <%= text_field_tag(:artist_name) %>
-  <%= submit_tag("Search for this record", class: "btn", data: { remote: true, toggle:"modal", target:"#myModal"}) %>
+  <%= submit_tag("Search for this record", id: "submit-search", class: "btn", data: { remote: true, toggle:"modal", target:"#myModal"}) %>
 <% end %>
 
 <%= render "records/modal" %>
