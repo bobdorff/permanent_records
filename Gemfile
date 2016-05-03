@@ -12,7 +12,7 @@ gem 'sdoc',         	'0.4.0', group: :doc
 gem 'bootstrap-sass',	'3.2.0.0'
 gem 'paperclip',      '~> 4.2'
 gem 'aws-sdk',        '< 2.0'
-
+gem 'faker',          '1.4.2'
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
   gem 'byebug',      '3.4.0'
