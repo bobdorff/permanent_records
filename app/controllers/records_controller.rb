@@ -10,4 +10,8 @@ class RecordsController < ApplicationController
     @record = params
     render layout: false
   end
+
+  def create
+  end
+
 end

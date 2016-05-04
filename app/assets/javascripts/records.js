@@ -1,7 +1,8 @@
 $( document ).ready(function() {
     $("#album-search").on("submit", function(event) {
         event.preventDefault();
-            $(".modal-body").html("<h4> Fetching Results...</h4>")
+            $("#post-view").html('')
+            $("#list-view").html('<h4>Fetching results...</h4>')
             var params  = $(this).serialize();
             var request = $.ajax(
                     {   url: "/records",
@@ -9,24 +10,39 @@ $( document ).ready(function() {
                         data: params
                     });
         request.done(function(response){
-            $(".modal-body").html(response); 
+            $("#list-view").html(response); 
         });
     });
-    $(".modal-body").on("submit", function(event) {
+
+    $("#list-view").on("submit", function(event) {
+        event.stopPropagation();
         event.preventDefault();
         var target = $(event.target)
         var params  = target.closest(".selected-record").serialize();
-            console.log(params);
         var request = $.ajax(
                 {   url: "/records/new",
                     method: "GET", 
                     data: params
                 });
         request.done(function(response){
-            $(".modal-body").html(response);
+            $("#list-view").html('');
+            $("#post-view").html(response);
         });
     }); 
 
+    $("#post-view").on("submit", "#create-form", function(event){
+        event.preventDefault();
+        var params = $(this).serialize();
+        var request = $.ajax(
+                {   url: "/records",
+                    method: "POST",
+                    data: params
+                });
+        request.done(function(response){
+            $("#myModal").modal('toggle');
+        })
+        
+    })
 
 });
 
