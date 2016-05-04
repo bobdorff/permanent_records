@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $("#album-search").on("submit", function(event) {
         event.preventDefault();
+            $(".modal-body").html("<h4> Fetching Results...</h4>")
             var params  = $(this).serialize();
             var request = $.ajax(
                     {   url: "/records",
@@ -11,17 +12,21 @@ $( document ).ready(function() {
             $(".modal-body").html(response); 
         });
     });
-    $(".modal-body").on("click", ".add-record", function(event) {
+    $(".modal-body").on("submit", function(event) {
         event.preventDefault();
-        var params  = $(".add-record").attr("record"); 
+        var target = $(event.target)
+        var params  = target.closest(".selected-record").serialize();
+            console.log(params);
         var request = $.ajax(
                 {   url: "/records/new",
                     method: "GET", 
-                    data: {record: params}
+                    data: params
                 });
         request.done(function(response){
             $(".modal-body").html(response);
         });
     }); 
+
+
 });
 

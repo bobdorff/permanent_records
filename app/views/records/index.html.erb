@@ -5,12 +5,15 @@
   <% n += 1 %>
   <div id=<%= "#{n}" %>
   	<li>
-  		<%= image_tag(result.thumb) %>
-      <h3><%= result.title %> (<%= result.year %>)</h3>
-  		<%= result.label %> 
-      <%= result.format %>
-      <%= result.barcode.first %>
-      <%= link_to "I'm listening to this!", new_record_path, record: result.id, class: "btn btn-success add-record" %>
+      <%= render "record_info", :result => result %>
+      <%= form_tag( new_record_path, class:"selected-record") do %>
+        <%= hidden_field_tag(:thumb, result.thumb) %>
+        <%= hidden_field_tag(:title, result.title) %>
+        <%= hidden_field_tag(:label, result.label.first) %>
+        <%= hidden_field_tag(:catno, result.catno)%>
+        <%= hidden_field_tag(:year,  result.year)%>
+        <%= submit_tag("I'm listening to this!", class: "btn btn-success add-record") %>
+      <% end %>
   	</li>
  	<br>
 	<% end %>

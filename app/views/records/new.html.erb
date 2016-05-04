@@ -1,2 +1,8 @@
-:D
-<%= @record %>
+<%= image_tag(@record[:thumb]) %>
+<h3><%= @record[:title] %> (<%= @record[:year]%>)</h3>
+<%= @record[:label]%> 
+<%= @record[:catno]%>
+<%= form_tag( records_path, id:"create-form") do %>
+<%= text_area_tag'text', nil, placeholder: "What did you think of this record?"%>
+<%= submit_tag("Add to my timeline", class: "btn btn-success add-record") %>
+<% end %>
