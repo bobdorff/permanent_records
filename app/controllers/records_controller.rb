@@ -7,6 +7,8 @@ class RecordsController < ApplicationController
   end
 
   def new
+    @record = params[:record]
+    render layout: false
   end
 
 end
