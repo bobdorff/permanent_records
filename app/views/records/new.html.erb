@@ -3,13 +3,7 @@
 <%= @result[:label]%> 
 <%= @result[:catno]%>
 <%= form_for @post do |f| %>
-<%#<%= f.text_area :comment, placeholder: "What did you think of this record?", autofocus: true <]%>
-<%#<%= f.hidden_field_tag(:thumb, @result[:thumb]) <]%>
-<%#<%= f.hidden_field_tag(:title, @result[:title]) %>%>
-<%#<%= f.hidden_field_tag(:label, @result[:label]) %>%>
+<%= f.text_area :content, placeholder: "What did you think of this record?", autofocus: true <]
 <%#<%= f.hidden_field_tag(:catno, @result[:catno])%>%>
-<%#<%= f.hidden_field_tag(:year,  @result[:year])%>%>
-<%#<%= f.hidden_field_tag(:release, @result[:release])%>%>
-<%#<%= f.hidden_field_tag(:artist, @result[:artist])<]%>
 <%= f.submit("Add to my timeline", class: "btn btn-success add-record") %>
 <% end %>

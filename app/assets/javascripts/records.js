@@ -20,8 +20,8 @@ $( document ).ready(function() {
         var target = $(event.target)
         var params  = target.closest(".selected-record").serialize();
         var request = $.ajax(
-                {   url: "/records/new",
-                    method: "GET", 
+                {   url: "/posts",
+                    method: "POST", 
                     data: params
                 });
         request.done(function(response){
