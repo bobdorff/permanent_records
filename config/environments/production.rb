@@ -87,4 +87,13 @@ Rails.application.configure do
     :s3_host_name => 's3-us-west-2.amazonaws.com'
   }
 }
+
+
+  MyApp::Application.configure do
+    config.react.variant = :production
+  end
+
+  config.react.jsx_transform_options = {
+    blacklist: ['spec.functionName', 'validation.react', 'strict'] 
+  }
 end
