@@ -16,7 +16,14 @@ module RecordsHelper
     query
   end
 
+  def record_in_database?
+    Record.find_by(catno: record_params[:catno])
+  end
 
+  def create_record
+    @record = Record.new(record_params)
+    @record.save
+  end
 end
 
 

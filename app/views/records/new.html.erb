@@ -1,8 +1,15 @@
-<%= image_tag(@record[:thumb]) %>
-<h3><%= @record[:title] %> (<%= @record[:year]%>)</h3>
-<%= @record[:label]%> 
-<%= @record[:catno]%>
-<%= form_tag( records_path, id:"create-form") do %>
-<%= text_area_tag'text', nil, placeholder: "What did you think of this record?", autofocus: true%>
-<%= submit_tag("Add to my timeline", class: "btn btn-success add-record") %>
+<%= image_tag(@result[:thumb]) %>
+<h3><%= @result[:title] %> (<%= @result[:year]%>)</h3>
+<%= @result[:label]%> 
+<%= @result[:catno]%>
+<%= form_for @post do |f| %>
+<%#<%= f.text_area :comment, placeholder: "What did you think of this record?", autofocus: true <]%>
+<%#<%= f.hidden_field_tag(:thumb, @result[:thumb]) <]%>
+<%#<%= f.hidden_field_tag(:title, @result[:title]) %>%>
+<%#<%= f.hidden_field_tag(:label, @result[:label]) %>%>
+<%#<%= f.hidden_field_tag(:catno, @result[:catno])%>%>
+<%#<%= f.hidden_field_tag(:year,  @result[:year])%>%>
+<%#<%= f.hidden_field_tag(:release, @result[:release])%>%>
+<%#<%= f.hidden_field_tag(:artist, @result[:artist])<]%>
+<%= f.submit("Add to my timeline", class: "btn btn-success add-record") %>
 <% end %>

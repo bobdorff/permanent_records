@@ -1,10 +1,10 @@
-      <%= form_tag( new_record_path, class:"selected-record") do %>
-        <%= hidden_field_tag(:thumb, result.thumb) %>
-        <%= hidden_field_tag(:title, result.title) %>
-        <%= hidden_field_tag(:label, result.label.first) %>
-        <%= hidden_field_tag(:catno, result.catno)%>
-        <%= hidden_field_tag(:year,  result.year)%>
-        <%= hidden_field_tag(:release, result.release)%>
-        <%= hidden_field_tag(:artist, result.artist)%>
-        <%= submit_tag("I'm listening to this!", class: "btn btn-success add-record") %>
-      <% end %>
+<%= form_for @record, html: {class: "selected-record"} do |f| %>
+<%= f.hidden_field(:thumb, value: result.thumb) %>
+<%= f.hidden_field(:title, value: result.title) %>
+<%= f.hidden_field(:label, value: result.label.first) %>
+<%= f.hidden_field(:catno, value: result.catno)%>
+<%= f.hidden_field(:year,  value: result.year)%>
+<%= f.hidden_field(:release, value: result.release)%>
+<%= f.hidden_field(:artist, value: result.artist)%>
+<%= f.submit("I'm listening to this!", class: "btn btn-success add-record") %>
+<% end %>
