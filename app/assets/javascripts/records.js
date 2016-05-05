@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $("#album-search").on("submit", function(event) {
         event.preventDefault();
+        console.log("hit  #1")
             $("#post-view").html('')
             $("#list-view").html('<h4>Fetching results...</h4>')
             var params  = $(this).serialize();
@@ -15,13 +16,14 @@ $( document ).ready(function() {
     });
 
     $("#list-view").on("submit", function(event) {
+        console.log("hit  #2")
         event.stopPropagation();
         event.preventDefault();
         var target = $(event.target)
         var params  = target.closest(".selected-record").serialize();
         var request = $.ajax(
-                {   url: "/posts",
-                    method: "POST", 
+                {   url: "/records/new",
+                    method: "GET", 
                     data: params
                 });
         request.done(function(response){
@@ -32,9 +34,10 @@ $( document ).ready(function() {
 
     $("#post-view").on("submit", "#create-form", function(event){
         event.preventDefault();
+        console.log("hit  #3")
         var params = $(this).serialize();
         var request = $.ajax(
-                {   url: "/records",
+                {   url: "/posts",
                     method: "POST",
                     data: params
                 });

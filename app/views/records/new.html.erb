@@ -2,8 +2,9 @@
 <h3><%= @result[:title] %> (<%= @result[:year]%>)</h3>
 <%= @result[:label]%> 
 <%= @result[:catno]%>
-<%= form_for @post do |f| %>
-<%= f.text_area :content, placeholder: "What did you think of this record?", autofocus: true <]
-<%#<%= f.hidden_field_tag(:catno, @result[:catno])%>%>
+
+<%= form_for @post, html: {id: "create-form"} do |f| %>
+<%= f.text_area :content, placeholder: "What did you think of this record?", autofocus: true %>
+<%= f.hidden_field(:catno, value: @result[:catno] )%>
 <%= f.submit("Add to my timeline", class: "btn btn-success add-record") %>
 <% end %>

@@ -8,21 +8,13 @@ class RecordsController < ApplicationController
   end
 
   def new
-    @post = Record.new
+    @post = Post.new
     @record = Record.new
     if !record_in_database?
       create_record
     end
-      @result = params
+      @result = params["record"]
       render layout: false
-  end
-
-  def create
-    if record_in_database?
-      #create listening session
-    else
-      create_record
-    end
   end
 
   private
