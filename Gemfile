@@ -14,6 +14,7 @@ gem 'aws-sdk',              '< 2.0'
 gem 'faker',                '1.4.2'
 gem 'will_paginate',        '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'react-rails',          '1.7.0'
 gem 'discogs-wrapper'
 
 group :development, :test do
