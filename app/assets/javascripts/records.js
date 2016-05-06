@@ -1,7 +1,6 @@
 $( document ).ready(function() {
     $("#album-search").on("submit", function(event) {
         event.preventDefault();
-        console.log("hit  #1")
             $("#post-view").html('')
             $("#list-view").html('<h4>Fetching results...</h4>')
             var params  = $(this).serialize();
@@ -16,7 +15,6 @@ $( document ).ready(function() {
     });
 
     $("#list-view").on("submit", function(event) {
-        console.log("hit  #2")
         event.stopPropagation();
         event.preventDefault();
         var target = $(event.target)
@@ -34,7 +32,6 @@ $( document ).ready(function() {
 
     $("#post-view").on("submit", "#create-form", function(event){
         event.preventDefault();
-        console.log("hit  #3")
         var params = $(this).serialize();
         var request = $.ajax(
                 {   url: "/posts",
