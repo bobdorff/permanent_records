@@ -89,9 +89,7 @@ Rails.application.configure do
 }
 
 
-  MyApp::Application.configure do
-    config.react.variant = :production
-  end
+  config.react.variant = :production
 
   config.react.jsx_transform_options = {
     blacklist: ['spec.functionName', 'validation.react', 'strict'] 
