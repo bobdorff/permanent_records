@@ -11,7 +11,7 @@ module RecordsHelper
     elsif !params[:artist_name].empty? && params[:album_title].empty?
       query = params[:artist_name].to_s
     else
-      query = params[:album_name].to_s  
+      query = params[:album_title].to_s  
     end
     query
   end
