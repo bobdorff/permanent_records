@@ -1,4 +1,4 @@
-jQuery( document ).ready(function() {
+$( document ).ready(function() {
     $("#album-search").on("submit", function(event) {
         event.preventDefault();
             $("#post-view").html('')
